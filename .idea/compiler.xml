@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tech_selenium" />
+        <module name="tech_selenium1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tech_selenium" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
