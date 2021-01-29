@@ -16,6 +16,4 @@ public class uploadTest extends baseTest{
             e.printStackTrace();
         }
     }
-
-
 }
