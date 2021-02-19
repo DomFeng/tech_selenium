@@ -1,3 +1,5 @@
+package junit5;
+
 import org.junit.jupiter.api.Test;
 
 public class browserTest extends baseTest{

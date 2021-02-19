@@ -1,3 +1,5 @@
+package junit5;
+
 import net.bytebuddy.build.ToStringPlugin;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;

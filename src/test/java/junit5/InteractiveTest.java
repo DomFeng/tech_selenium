@@ -1,3 +1,5 @@
+package junit5;
+
 import org.apache.commons.lang3.builder.ToStringExclude;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
