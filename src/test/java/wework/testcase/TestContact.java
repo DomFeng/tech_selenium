@@ -1,15 +1,29 @@
 package wework.testcase;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import wework.page.ContactPage;
 import wework.page.MainPage;
 
 public class TestContact {
+    public static MainPage main;
+    public static ContactPage contact;
+
+    @BeforeAll
+    public static void beforeAll(){
+        main = new MainPage();
+        contact = main.toContact();
+    }
+
     @Test
     public void testAddMember(){
-        MainPage main = new MainPage();
-        main.toContact().addMember("1","2","18101067536");
-        //todo:assert
+        contact.addMember("1","1","18101067536");
+    }
+
+    @Test
+    public void testSearch(){
+        contact.testSearch("1").testDelete();
     }
 
     @AfterAll
@@ -19,6 +33,6 @@ public class TestContact {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        MainPage.driver.quit();
+        main.driver.quit();
     }
 }
