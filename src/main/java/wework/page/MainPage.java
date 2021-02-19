@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.concurrent.TimeUnit;
 
 public class MainPage {
-    public static WebDriver driver;
+    RemoteWebDriver driver;
 
     public MainPage() {
         String url = "https://work.weixin.qq.com/wework_admin/frame";
@@ -36,6 +37,10 @@ public class MainPage {
     public ContactPage toContact(){
         //todo:进入通讯录页面
         driver.findElement(By.cssSelector("#menu_contacts")).click();
-        return new ContactPage();
+        return new ContactPage(driver);
+    }
+
+    public void quit() {
+        driver.quit();
     }
 }
