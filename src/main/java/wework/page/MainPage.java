@@ -18,7 +18,7 @@ public class MainPage extends BasePage{
         driver.manage().deleteAllCookies();
 
         //todo:改成从文件读取
-        driver.manage().addCookie(new Cookie("cookie: wwrtx.i18n_lan", "zh"));
+        driver.manage().addCookie(new Cookie("wwrtx.i18n_lan", "zh"));
         driver.manage().addCookie(new Cookie("wwrtx.c_gdpr", "0"));
         driver.manage().addCookie(new Cookie("wwrtx.ref", "direct"));
         driver.manage().addCookie(new Cookie("wwrtx.refid", "1122733531343178"));
@@ -32,11 +32,11 @@ public class MainPage extends BasePage{
         driver.manage().addCookie(new Cookie("skey", "^@Tx53OypCS"));
         driver.manage().addCookie(new Cookie("RK", "zcAYC+NPVl"));
         driver.manage().addCookie(new Cookie("ptcz", "37b94148c2210384bb1e7d57528f1a0d64c87f172dab799aa8d63286c4ba371d"));
-        driver.manage().addCookie(new Cookie("ww_rtkey", "5u6v883"));
-        driver.manage().addCookie(new Cookie("wwrtx.vst", "BiGMstdLgRh3AqYyTM5-3KzyISNSELBSMiktdL9ZIozvJQHf7avCdfOJSuFDe9LjONTuP1v_7iNxtbvuyTaaxmOU287E3enxC8z4O0QMJDmyisFc38HPxkSrbYzH1rwtjRKon61rq-7AZMl7WxsgKSHs_17RDVVu4L85hASiMUriN_y4eD0-4uoLTsVeZNeCMzFP2T1Xb5MF_c1553jMRvGMp54RWO1IZvSY3rnF9rllFDRJa3du-StM45FF4XfAsm5Tb1E5V628CFuDw58MfA"));
-        driver.manage().addCookie(new Cookie("wwrtx.d2st", "a8724241"));
-        driver.manage().addCookie(new Cookie("wwrtx.sid", "3tj64jSC-jVFq6ddCRHeR9-a1g_LvrgzLkmNTwp7Pg2h02DZcGxed8UYUmitBUgX"));
-        driver.get(url);
+        driver.manage().addCookie(new Cookie("ww_rtkey", "5bkqu8m"));
+        driver.manage().addCookie(new Cookie("wwrtx.d2st", "a1136246"));
+        driver.manage().addCookie(new Cookie("wwrtx.sid", "3tj64jSC-jVFq6ddCRHeRxkyaiy5KWh2vtFpUoUoo1Q4z7J9evcccLx7SyeycdZR"));
+        driver.manage().addCookie(new Cookie("wwrtx.vst", "EOTiEMBvmpb9TfjHl5L4Lgrf8DNWgFD5sA39NLWbN_h7goe7QMWlOgAjL2KXtWHy1MPhU0IcwFyr3cDPPZE6Nspt2oxKN7k1h2jQsoP5KPoqdYUl0JGjMhgB9g1gJU6HHiUAMh3JuUdYr9PLwgKJ0wIugz8TEKEAKTcrFlmJXFvTOYbI7on6VCsmPYIkGLcFME4tGCIvIfwKEWiZk-N7Zeiv09ttv2a0ygM7lyqPdSzYVJey8E0HfTmRlBf7XIAaisIizbQ4rgMuTxSKdXcAwQ"));
+                driver.get(url);
     }
 
     public ContactPage toContact(){

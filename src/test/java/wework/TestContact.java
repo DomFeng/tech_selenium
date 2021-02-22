@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import wework.page.ContactPage;
 import wework.page.MainPage;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class TestContact {
     public static MainPage main;
     public static ContactPage contact;
@@ -18,12 +20,19 @@ public class TestContact {
 
     @Test
     public void testAddMember(){
-        contact.addMember("1","1","18101067536");
+        String username = contact.addMember("1","1","18101067536").testSearch("1").getUserName();
+        //断言 是否查询到新增的用户
+        assertEquals(username,"1");
     }
 
     @Test
     public void testSearch(){
         contact.testSearch("1").testDelete();
+    }
+
+    @Test
+    public void testImportFromFile(){
+        contact.importFromFile("C:\\Users\\FENG.LAPTOP-A6J84O42\\IdeaProjects\\tech_selenium\\src\\main\\resources\\通讯录批量导入模板.xlsx");
     }
 
     @AfterAll

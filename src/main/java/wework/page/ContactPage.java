@@ -1,8 +1,10 @@
 package wework.page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLDecoder;
 
 public class ContactPage extends BasePage{
     By addMember = By.linkText("添加成员");
@@ -37,6 +39,10 @@ public class ContactPage extends BasePage{
         return this;
     }
 
+    public String getUserName(){
+        return driver.findElement(By.cssSelector(".member_display_cover_detail_name")).getText();
+    }
+
     public ContactPage testDelete(){
         click(delete);
         click(By.linkText("确认"));
@@ -44,6 +50,26 @@ public class ContactPage extends BasePage{
 //        driver.findElement(delete).click();
 //        driver.findElement(By.linkText("确认")).click();
 //        driver.findElement(By.id("clearMemberSearchInput")).click();
+        return this;
+    }
+
+    public ContactPage importFromFile(String path){
+        System.out.println(path);
+        //转换变量的编码
+        String path_utf = "";
+        try {
+            path_utf = URLDecoder.decode(path,"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        click(By.cssSelector(".ww_operationBar:nth-child(1) .ww_btn_PartDropdown_left"));
+        click(By.linkText("文件导入"));
+        //直接赋值弹窗的文件路径
+        upload(By.name("file"), path_utf);
+        //driver.findElement(By.name("file")).sendKeys("C:\\Users\\FENG.LAPTOP-A6J84O42\\IdeaProjects\\tech_selenium\\src\\main\\resources\\通讯录批量导入模板.xlsx");
+        click(By.linkText("确认导入"));
+        click(By.xpath("//*[@id=\"reloadContact\"]"));
         return this;
     }
 }
